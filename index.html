@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air China | Frankfurt to Beijing Daxing - Route Knowledge Quiz</title>
+    <style>
+        :root {
+            --deep-blue: #0d2b45;
+            --mid-blue: #1a3f5f;
+            --air-china-red: #c41230;
+            --gold: #c8993b;
+            --gold-light: #f0e0c0;
+            --bg: #f3f6fa;
+            --card-bg: #ffffff;
+            --text: #2c2c2c;
+            --text-light: #5a5a5a;
+            --text-muted: #7a7a7a;
+            --correct-green: #1b7a3d;
+            --correct-bg: #e8f5e9;
+            --correct-border: #4caf84;
+            --incorrect-red: #b71c1c;
+            --incorrect-bg: #fdecea;
+            --incorrect-border: #e57373;
+            --border: #e0e4ea;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+            --radius-sm: 8px;
+            --radius: 14px;
+            --radius-lg: 20px;
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-heading: 'Georgia', 'Times New Roman', 'Palatino Linotype', serif;
+            --font-body: 'Segoe UI', 'Inter', 'Helvetica Neue', 'Roboto', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 20px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            background-image:
+                radial-gradient(ellipse at 15% 10%, rgba(26, 63, 95, 0.04) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 90%, rgba(196, 18, 48, 0.03) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 50%, rgba(200, 153, 59, 0.03) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        /* ── Navigation Bar ────────────────────── */
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 20px;
+            transition: var(--transition);
+        }
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+            gap: 16px;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--deep-blue);
+            letter-spacing: 0.3px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .nav-brand .icon-plane {
+            font-size: 1.4rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .nav-brand:hover .icon-plane {
+            transform: translateX(4px) rotate(-5deg);
+        }
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+            flex-shrink: 0;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--mid-blue);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 8px 14px;
+            border-radius: 20px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .nav-links a:hover {
+            background: rgba(26, 63, 95, 0.07);
+            color: var(--deep-blue);
+        }
+        .nav-links a.nav-cta {
+            background: var(--air-china-red);
+            color: #fff;
+            font-weight: 600;
+            padding: 8px 18px;
+        }
+        .nav-links a.nav-cta:hover {
+            background: #a00e26;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(196, 18, 48, 0.3);
+        }
+
+        /* ── Main Container ───────────────────── */
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 20px 60px;
+        }
+
+        /* ── Section Headers ──────────────────── */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            color: var(--air-china-red);
+            margin-bottom: 8px;
+        }
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 2px;
+            background: var(--air-china-red);
+            border-radius: 2px;
+        }
+
+        /* ── Knowledge Section ────────────────── */
+        .knowledge-section {
+            margin-top: 16px;
+            margin-bottom: 40px;
+        }
+        .knowledge-hero-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .knowledge-hero-card:hover {
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+        }
+        .hero-top-strip {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #1a4a6e 40%, var(--mid-blue) 100%);
+            padding: 28px 32px 22px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-top-strip::after {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -40px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+        }
+        .hero-top-strip::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 30%;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.025);
+            pointer-events: none;
+        }
+        .hero-route-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
+            padding: 6px 16px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-route-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ffcc80;
+            box-shadow: 0 0 8px rgba(255, 200, 100, 0.6);
+            animation: pulse-dot 2s infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                box-shadow: 0 0 6px rgba(255, 200, 100, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 18px rgba(255, 200, 100, 0.9);
+            }
+        }
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.3;
+            letter-spacing: 0.2px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-subtitle {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 6px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+        .knowledge-body {
+            padding: 28px 32px 24px;
+        }
+        .knowledge-body p {
+            font-size: 1.02rem;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+        .knowledge-body p:last-child {
+            margin-bottom: 0;
+        }
+        .highlight-stat {
+            display: inline-block;
+            font-weight: 700;
+            color: var(--deep-blue);
+            background: rgba(26, 63, 95, 0.06);
+            padding: 2px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.2px;
+        }
+        .key-facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+        }
+        .fact-chip {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding: 10px 14px;
+            background: #f9fafb;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+        .fact-chip:hover {
+            background: #fff;
+            border-color: var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+        .fact-chip .fact-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .fact-chip strong {
+            color: var(--deep-blue);
+            font-weight: 600;
+        }
+
+        /* ── CTA Button ────────────────────────── */
+        .cta-wrapper {
+            text-align: center;
+            margin: 32px 0 12px;
+        }
+        .btn-start-quiz {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--air-china-red);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 14px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            letter-spacing: 0.4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(196, 18, 48, 0.3);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-start-quiz:hover {
+            background: #a00e26;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(196, 18, 48, 0.4);
+        }
+        .btn-start-quiz:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(196, 18, 48, 0.35);
+        }
+        .btn-start-quiz .arrow-icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+        .btn-start-quiz:hover .arrow-icon {
+            transform: translateX(4px);
+        }
+
+        /* ── Divider ───────────────────────────── */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 40px 0 32px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+        .section-divider .divider-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        /* ── Quiz Section ──────────────────────── */
+        .quiz-section {
+            scroll-margin-top: 80px;
+        }
+        .quiz-header {
+            margin-bottom: 24px;
+        }
+        .quiz-title {
+            font-family: var(--font-heading);
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            letter-spacing: 0.2px;
+        }
+        .quiz-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .progress-bar-outer {
+            width: 100%;
+            height: 6px;
+            background: #e8ecf1;
+            border-radius: 10px;
+            margin-top: 16px;
+            overflow: hidden;
+        }
+        .progress-bar-inner {
+            height: 100%;
+            background: linear-gradient(90deg, var(--air-china-red), #e05060);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+        .progress-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        /* ── Question Card ─────────────────────── */
+        .question-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 24px 28px 20px;
+            margin-bottom: 18px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .question-card.answered-correct {
+            border-color: var(--correct-border);
+            background: #fafff9;
+            box-shadow: 0 4px 16px rgba(27, 122, 61, 0.08);
+        }
+        .question-card.answered-incorrect {
+            border-color: var(--incorrect-border);
+            background: #fffdfd;
+            box-shadow: 0 4px 16px rgba(183, 28, 28, 0.07);
+        }
+        .question-number {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--mid-blue);
+            background: rgba(26, 63, 95, 0.06);
+            padding: 4px 12px;
+            border-radius: 16px;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .options-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+        .option-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 13px 18px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: #fafbfc;
+            cursor: pointer;
+            font-size: 0.97rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: all 0.2s ease;
+            text-align: left;
+            font-family: var(--font-body);
+            position: relative;
+        }
+        .option-btn:hover:not(.disabled) {
+            border-color: #b0c4d6;
+            background: #f2f6fa;
+            transform: translateX(2px);
+        }
+        .option-btn:active:not(.disabled) {
+            transform: scale(0.985);
+        }
+        .option-btn .option-letter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #e8ecf1;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--mid-blue);
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        .option-btn.correct-choice {
+            border-color: var(--correct-border) !important;
+            background: var(--correct-bg) !important;
+            color: #1a5e30 !important;
+            font-weight: 600 !important;
+            cursor: default !important;
+            pointer-events: none;
+        }
+        .option-btn.correct-choice .option-letter {
+            background: #2e7d32 !important;
+            color: #fff !important;
+        }
+        .option-btn.wrong-choice {
+            border-color: var(--incorrect-border) !important;
+            background: var(--incorrect-bg) !important;
+            color: #8b1a1a !important;
+            font-weight: 600 !important;
+            cursor: default !important;
+            pointer-events: none;
+            animation: shake 0.45s ease;
+        }
+        .option-btn.wrong-choice .option-letter {
+            background: #c62828 !important;
+            color: #fff !important;
+        }
+        .option-btn.reveal-correct {
+            border-color: var(--correct-border) !important;
+            background: #f1faf4 !important;
+            cursor: default !important;
+            pointer-events: none;
+        }
+        .option-btn.reveal-correct .option-letter {
+            background: #4caf84 !important;
+            color: #fff !important;
+        }
+        .option-btn.disabled {
+            pointer-events: none;
+            opacity: 0.75;
+        }
+        .option-btn.disabled:not(.correct-choice):not(.wrong-choice):not(.reveal-correct) {
+            opacity: 0.55;
+        }
+        .feedback-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-top: 10px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            letter-spacing: 0.3px;
+        }
+        .feedback-tag.feedback-correct {
+            color: #1b5e20;
+            background: #c8e6c9;
+        }
+        .feedback-tag.feedback-incorrect {
+            color: #b71c1c;
+            background: #ffcdd2;
+        }
+
+        @keyframes shake {
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+            15% {
+                transform: translateX(-6px);
+            }
+            30% {
+                transform: translateX(6px);
+            }
+            45% {
+                transform: translateX(-4px);
+            }
+            60% {
+                transform: translateX(4px);
+            }
+            75% {
+                transform: translateX(-2px);
+            }
+            90% {
+                transform: translateX(2px);
+            }
+        }
+
+        /* ── Results Panel ─────────────────────── */
+        .results-panel {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 32px 28px;
+            margin-top: 28px;
+            text-align: center;
+            border: 2px solid var(--border);
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+        .results-panel.visible {
+            display: block;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .results-score-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+            position: relative;
+        }
+        .results-score-circle.excellent {
+            background: linear-gradient(135deg, #2e7d32, #43a047);
+            box-shadow: 0 8px 28px rgba(46, 125, 50, 0.35);
+        }
+        .results-score-circle.great {
+            background: linear-gradient(135deg, #1a6fa0, #2980b9);
+            box-shadow: 0 8px 28px rgba(26, 111, 160, 0.35);
+        }
+        .results-score-circle.good {
+            background: linear-gradient(135deg, #e67e22, #f0a040);
+            box-shadow: 0 8px 28px rgba(230, 126, 34, 0.3);
+        }
+        .results-score-circle.keep-learning {
+            background: linear-gradient(135deg, #b71c1c, #d44545);
+            box-shadow: 0 8px 28px rgba(183, 28, 28, 0.3);
+        }
+        .results-grade-label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .results-message {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .btn-reset {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--deep-blue);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+            font-family: var(--font-body);
+        }
+        .btn-reset:hover {
+            background: #0f3550;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(13, 43, 69, 0.3);
+        }
+        .btn-reset:active {
+            transform: translateY(0);
+        }
+
+        /* ── Footer ────────────────────────────── */
+        .site-footer {
+            text-align: center;
+            padding: 32px 20px 20px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+        .site-footer span {
+            color: var(--air-china-red);
+            font-weight: 600;
+        }
+
+        /* ── Responsive ────────────────────────── */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.45rem;
+            }
+            .hero-top-strip {
+                padding: 22px 20px 18px;
+            }
+            .knowledge-body {
+                padding: 20px 18px 18px;
+            }
+            .knowledge-body p {
+                font-size: 0.95rem;
+            }
+            .key-facts-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .fact-chip {
+                font-size: 0.8rem;
+                padding: 8px 10px;
+                gap: 6px;
+            }
+            .fact-chip .fact-icon {
+                font-size: 1.1rem;
+            }
+            .question-card {
+                padding: 18px 16px 16px;
+            }
+            .question-text {
+                font-size: 0.98rem;
+            }
+            .option-btn {
+                font-size: 0.9rem;
+                padding: 11px 14px;
+            }
+            .btn-start-quiz {
+                font-size: 0.95rem;
+                padding: 12px 28px;
+            }
+            .quiz-title {
+                font-size: 1.3rem;
+            }
+            .nav-brand {
+                font-size: 0.85rem;
+                gap: 6px;
+            }
+            .nav-links a {
+                font-size: 0.78rem;
+                padding: 6px 10px;
+            }
+            .results-panel {
+                padding: 24px 16px;
+            }
+            .results-score-circle {
+                width: 80px;
+                height: 80px;
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .key-facts-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-inner {
+                height: 48px;
+                gap: 8px;
+            }
+            .nav-brand {
+                font-size: 0.78rem;
+            }
+            .nav-links a {
+                font-size: 0.72rem;
+                padding: 5px 8px;
+            }
+            .hero-title {
+                font-size: 1.25rem;
+            }
+            .question-text {
+                font-size: 0.9rem;
+            }
+            .option-btn {
+                font-size: 0.85rem;
+                padding: 10px 12px;
+            }
+            .option-btn .option-letter {
+                width: 28px;
+                height: 28px;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Navigation Bar -->
+    <!-- ═══════════════════════════════════════════ -->
+    <nav class="nav-bar" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#top" class="nav-brand" aria-label="Air China Route Knowledge Home">
+                <span class="icon-plane">✈️</span> Air China Route Knowledge
+            </a>
+            <ul class="nav-links">
+                <li><a href="#knowledge-section">Background</a></li>
+                <li><a href="#quiz-section" class="nav-cta">Take Quiz</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Main Content -->
+    <!-- ═══════════════════════════════════════════ -->
+    <main class="main-container" id="top">
+
+        <!-- ── Knowledge Section ────────────────── -->
+        <section class="knowledge-section" id="knowledge-section" aria-labelledby="knowledge-heading">
+            <div class="section-label">Background Knowledge</div>
+            <article class="knowledge-hero-card">
+                <div class="hero-top-strip">
+                    <div class="hero-route-badge">
+                        <span class="dot"></span> FRA → PKX · New Gateway
+                    </div>
+                    <h1 id="knowledge-heading" class="hero-title">
+                        Explore the New Gateway:<br>Air China Launches Frankfurt to Beijing&nbsp;Daxing Flights
+                    </h1>
+                    <p class="hero-subtitle">Enhancing connectivity on one of the world's busiest intercontinental corridors</p>
+                </div>
+                <div class="knowledge-body">
+                    <p>
+                        As the <span class="highlight-stat">largest carrier on China-Europe routes</span>, Air China operates
+                        <span class="highlight-stat">37 routes</span> offering nearly
+                        <span class="highlight-stat">70 daily flights</span>. Benefiting from the deepened joint venture with
+                        <strong>Lufthansa Group</strong>, Air China seamlessly connects corporate passengers with
+                        <strong>shared premium lounge access</strong> at Frankfurt Airport.
+                    </p>
+                    <p>
+                        The newly launched <strong>daily Frankfurt–Beijing Daxing (PKX)</strong> service utilizes
+                        <span class="highlight-stat">Boeing 777</span> aircraft featuring a
+                        <span class="highlight-stat">First Class cabin</span>. This new gateway optimizes travel to the
+                        Beijing-Tianjin-Hebei region and <strong>Xiong'an New Area</strong> via China's premier integrated
+                        transport hub. This expansion of the route network offers travelers significantly greater flexibility
+                        in planning their business trips.
+                    </p>
+                    <div class="key-facts-grid">
+                        <div class="fact-chip">
+                            <span class="fact-icon">🛫</span>
+                            <span><strong>37 Routes</strong><br>China-Europe network</span>
+                        </div>
+                        <div class="fact-chip">
+                            <span class="fact-icon">📅</span>
+                            <span><strong>~70 Daily Flights</strong><br>Extensive schedule</span>
+                        </div>
+                        <div class="fact-chip">
+                            <span class="fact-icon">🤝</span>
+                            <span><strong>Lufthansa JV</strong><br>Premium lounge access</span>
+                        </div>
+                        <div class="fact-chip">
+                            <span class="fact-icon">✈️</span>
+                            <span><strong>Boeing 777</strong><br>First Class cabin</span>
+                        </div>
+                        <div class="fact-chip">
+                            <span class="fact-icon">🏙️</span>
+                            <span><strong>PKX Gateway</strong><br>Beijing Daxing hub</span>
+                        </div>
+                        <div class="fact-chip">
+                            <span class="fact-icon">🔄</span>
+                            <span><strong>Daily Service</strong><br>FRA → PKX</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <div class="cta-wrapper">
+                <button class="btn-start-quiz" onclick="scrollToQuiz()" aria-label="Start the knowledge quiz">
+                    Start the Quiz <span class="arrow-icon">↓</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- ── Divider ───────────────────────────── -->
+        <div class="section-divider">
+            <span class="divider-icon">📝</span> Knowledge Quiz Below
+            <span class="divider-icon">📝</span>
+        </div>
+
+        <!-- ── Quiz Section ──────────────────────── -->
+        <section class="quiz-section" id="quiz-section" aria-labelledby="quiz-heading">
+            <div class="quiz-header">
+                <div class="section-label">Interactive Quiz</div>
+                <h2 id="quiz-heading" class="quiz-title">Take the Quiz & Enhance Your Routing Knowledge Now</h2>
+                <p class="quiz-subtitle">Select an answer for each question. Instant feedback will be provided.</p>
+                <div class="progress-bar-outer">
+                    <div class="progress-bar-inner" id="progressBar" style="width: 0%;"></div>
+                </div>
+                <p class="progress-text" id="progressText">0 of 5 answered</p>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question-card" id="qCard1" data-question="1">
+                <span class="question-number">Question 1</span>
+                <p class="question-text">Which airport concept does Air China utilize in Beijing to provide maximum scheduling flexibility for corporate travelers?</p>
+                <ul class="options-list">
+                    <li>
+                        <button class="option-btn" data-q="1" data-opt="A" onclick="selectAnswer(this, '1', 'A')">
+                            <span class="option-letter">A</span> Single Airport Focus
+                        </button>
+                    </li>
+                    <li>
+                        <button class="option-btn" data-q="1" data-opt="B" data-correct="true" onclick="selectAnswer(this, '1', 'B')">
+                            <span class="option-letter">B</span> Dual-Hub Network (PEK &amp; PKX)
+                        </button>
+                    </li>
+                    <li>
+                        <button class="option-btn" data-q="1" data-opt="C" onclick="selectAnswer(this, '1', 'C')">
+                            <span class="option-letter">C</span> Regional Transit Only
+                        </button>
+                    </li>
+                </ul>
+                <div class="feedback-tag" id="feedback1" style="display:none;"></div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-card" id="qCard2" data-question="2">
+                <span class="question-number">Question 2</span>
+                <p class="question-text">How does the new Frankfurt to Beijing Daxing (PKX) flight benefit corporate clients?</p>
+                <ul class="options-list">
+                    <li>
+                        <button class="option-btn" data-q="2" data-opt="A" onclick="selectAnswer(this, '2', 'A')">
+                            <span class="option-letter">A</span> By offering leisure tour packages
+                        </button>
+                    </li>
+                    <li>
+                        <button class="option-btn" data-q="2" data-opt="B" data-correct="true" onclick="selectAnswer(this, '2', 'B')">
+                            <span class="option-letter">B</span> By providing modern terminal efficiency and streamlined arrivals
+                        </button>
+                    </li>
+                    <li>
+                        <button class="option-btn" data-q="2" data-opt="C" onclick="selectAnswer(this, '2', 'C')">
+                            <span class="option-letter">C</span> By connecting to domestic holiday resorts
+                        </button>
+                    </li>
+                </ul>
+                <div class="feedback-tag" id="feedback2" style="display:none;"></div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-card" id="qCard3" data-question="3">
+                <span class="question-number">Question 3 · True or False</span>
+                <p class="question-text">Air China's Frankfurt to Beijing Daxing flight is operated by the Boeing 777 aircraft.</p>
+                <ul class="options-list">
+                    <li>
+                        <button class="option-btn" data-q="3" data-opt="A" data-correct="true" onclick="selectAnswer(this, '3', 'A')">
+                            <span class="option-letter">A</span> True
+                        </button>
+                    </li>
+                    <li>
+                        <button class="option-btn" data-q="3" data-opt="B" onclick="selectAnswer(this, '3', 'B')">
+                            <span class="option-letter">B</span> False
+                        </button>
+                    </li>
+                </ul>
+                <div class="feedback-tag" id="feedback3" style="display:none;"></div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-card" id="qCard4" data-question="4">
+                <span class="question-number">Question 4 · True or False</span>
+                <p class="question-text">A First Class cabin is available on Air China's Frankfurt to Beijing Daxing flight.</p>
+                <ul class="options-list">
+                    <li>
+                        <button class="option-btn" data-q="4" data-opt="A" data-correct="true" onclick="selectAnswer(this, '4', 'A')">
+                            <span class="option-letter">A</span> True
+                        </button>
+                    </li>
+                    <li>
+                        <button class="option-btn" data-q="4" data-opt="B" onclick="selectAnswer(this, '4', 'B')">
+                            <span class="option-letter">B</span> False
+                        </button>
+                    </li>
+                </ul>
+                <div class="feedback-tag" id="feedback4" style="display:none;"></div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-card" id="qCard5" data-question="5">
+                <span class="question-number">Question 5</span>
+                <p class="question-text">What is the scheduled flight frequency of Air China's Frankfurt to Beijing Daxing service?</p>
+                <ul class="options-list">
+                    <li>
+                        <button class="option-btn" data-q="5" data-opt="A" onclick="selectAnswer(this, '5', 'A')">
+                            <span class="option-letter">A</span> 1 flight per week
+                        </button>
+                    </li>
+                    <li>
+                        <button class="option-btn" data-q="5" data-opt="B" onclick="selectAnswer(this, '5', 'B')">
+                            <span class="option-letter">B</span> 3 flights per week
+                        </button>
+                    </li>
+                    <li>
+                        <button class="option-btn" data-q="5" data-opt="C" data-correct="true" onclick="selectAnswer(this, '5', 'C')">
+                            <span class="option-letter">C</span> Daily
+                        </button>
+                    </li>
+                </ul>
+                <div class="feedback-tag" id="feedback5" style="display:none;"></div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="results-panel" id="resultsPanel" aria-live="polite">
+                <div class="results-score-circle" id="scoreCircle">0/5</div>
+                <p class="results-grade-label" id="gradeLabel"></p>
+                <p class="results-message" id="resultsMessage"></p>
+                <button class="btn-reset" onclick="resetQuiz()" aria-label="Reset the quiz and try again">
+                    🔄 Reset Quiz & Try Again
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- Footer -->
+    <!-- ═══════════════════════════════════════════ -->
+    <footer class="site-footer">
+        <p>✈️ <span>Air China</span> Route Knowledge · Interactive Learning Tool · &copy; 2026</p>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- JavaScript -->
+    <!-- ═══════════════════════════════════════════ -->
+    <script>
+        (function() {
+            // ── State ──────────────────────────────
+            const totalQuestions = 5;
+            const answered = {}; // { '1': true/false, '2': true/false, ... }
+            const correctAnswers = {
+                '1': 'B',
+                '2': 'B',
+                '3': 'A',
+                '4': 'A',
+                '5': 'C'
+            };
+
+            // ── DOM references ─────────────────────
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const resultsPanel = document.getElementById('resultsPanel');
+            const scoreCircle = document.getElementById('scoreCircle');
+            const gradeLabel = document.getElementById('gradeLabel');
+            const resultsMessage = document.getElementById('resultsMessage');
+
+            // ── Helper: update progress ────────────
+            function updateProgress() {
+                const count = Object.keys(answered).length;
+                const pct = Math.round((count / totalQuestions) * 100);
+                progressBar.style.width = pct + '%';
+                progressText.textContent = count + ' of ' + totalQuestions + ' answered';
+
+                // If all answered, show results
+                if (count === totalQuestions) {
+                    showResults();
+                }
+            }
+
+            // ── Select Answer ──────────────────────
+            window.selectAnswer = function(btnElement, questionNum, chosenOpt) {
+                // Prevent double-answering
+                if (answered.hasOwnProperty(questionNum)) return;
+
+                const isCorrect = (chosenOpt === correctAnswers[questionNum]);
+                answered[questionNum] = isCorrect;
+
+                const qCard = document.getElementById('qCard' + questionNum);
+                const feedbackEl = document.getElementById('feedback' + questionNum);
+                const allOptionBtns = qCard.querySelectorAll('.option-btn');
+
+                // Disable all buttons in this card
+                allOptionBtns.forEach(b => b.classList.add('disabled'));
+
+                // Mark the chosen button
+                if (isCorrect) {
+                    btnElement.classList.add('correct-choice');
+                    qCard.classList.add('answered-correct');
+                    feedbackEl.style.display = 'inline-flex';
+                    feedbackEl.className = 'feedback-tag feedback-correct';
+                    feedbackEl.textContent = '✅ Correct!';
+                } else {
+                    btnElement.classList.add('wrong-choice');
+                    qCard.classList.add('answered-incorrect');
+                    // Reveal the correct answer
+                    allOptionBtns.forEach(b => {
+                        if (b.getAttribute('data-opt') === correctAnswers[questionNum]) {
+                            b.classList.add('reveal-correct');
+                        }
+                    });
+                    feedbackEl.style.display = 'inline-flex';
+                    feedbackEl.className = 'feedback-tag feedback-incorrect';
+                    feedbackEl.textContent = '❌ Incorrect — the correct answer is highlighted above.';
+                }
+
+                // Small delay then update progress (for better UX flow)
+                setTimeout(() => {
+                    updateProgress();
+                    // Smooth-scroll to next unanswered question if any
+                    if (Object.keys(answered).length < totalQuestions) {
+                        const nextQNum = findNextUnanswered();
+                        if (nextQNum) {
+                            const nextCard = document.getElementById('qCard' + nextQNum);
+                            if (nextCard) {
+                                nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }
+                    } else {
+                        // All done — scroll to results
+                        resultsPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 350);
+            };
+
+            // ── Find next unanswered question ──────
+            function findNextUnanswered() {
+                for (let i = 1; i <= totalQuestions; i++) {
+                    if (!answered.hasOwnProperty(String(i))) {
+                        return i;
+                    }
+                }
+                return null;
+            }
+
+            // ── Show Results ───────────────────────
+            function showResults() {
+                let score = 0;
+                for (let i = 1; i <= totalQuestions; i++) {
+                    if (answered[String(i)] === true) score++;
+                }
+
+                // Update score circle
+                scoreCircle.textContent = score + '/5';
+                scoreCircle.className = 'results-score-circle';
+                if (score === 5) {
+                    scoreCircle.classList.add('excellent');
+                    gradeLabel.textContent = '🏆 Outstanding!';
+                    resultsMessage.textContent =
+                        'Perfect score! You are a true routing expert. Your knowledge of Air China\'s Frankfurt–Beijing Daxing service is impeccable.';
+                } else if (score === 4) {
+                    scoreCircle.classList.add('great');
+                    gradeLabel.textContent = '🌟 Great Job!';
+                    resultsMessage.textContent =
+                        'Excellent routing knowledge! You clearly understand the key features of this new gateway service. Just one detail to brush up on.';
+                } else if (score === 3) {
+                    scoreCircle.classList.add('good');
+                    gradeLabel.textContent = '👍 Good Effort!';
+                    resultsMessage.textContent =
+                        'You have a solid foundation. Review the background information above to strengthen your knowledge of the Frankfurt–Beijing Daxing route.';
+                } else {
+                    scoreCircle.classList.add('keep-learning');
+                    gradeLabel.textContent = '📖 Keep Learning!';
+                    resultsMessage.textContent =
+                        'No worries — every expert starts somewhere! Scroll back up and review the key facts about Air China\'s new gateway, then try the quiz again.';
+                }
+
+                resultsPanel.classList.add('visible');
+            }
+
+            // ── Reset Quiz ──────────────────────────
+            window.resetQuiz = function() {
+                // Clear state
+                for (const key in answered) {
+                    delete answered[key];
+                }
+
+                // Reset all question cards
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const qCard = document.getElementById('qCard' + i);
+                    const feedbackEl = document.getElementById('feedback' + i);
+                    const allOptionBtns = qCard.querySelectorAll('.option-btn');
+
+                    qCard.classList.remove('answered-correct', 'answered-incorrect');
+                    feedbackEl.style.display = 'none';
+                    feedbackEl.className = 'feedback-tag';
+                    feedbackEl.textContent = '';
+                    allOptionBtns.forEach(b => {
+                        b.classList.remove('disabled', 'correct-choice', 'wrong-choice',
+                            'reveal-correct');
+                    });
+                }
+
+                // Hide results
+                resultsPanel.classList.remove('visible');
+                scoreCircle.textContent = '0/5';
+                scoreCircle.className = 'results-score-circle';
+                gradeLabel.textContent = '';
+                resultsMessage.textContent = '';
+
+                // Reset progress
+                progressBar.style.width = '0%';
+                progressText.textContent = '0 of 5 answered';
+
+                // Scroll back to quiz section
+                document.getElementById('quiz-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            };
+
+            // ── Scroll to Quiz ─────────────────────
+            window.scrollToQuiz = function() {
+                document.getElementById('quiz-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            };
+
+            // ── Initialize ─────────────────────────
+            updateProgress();
+        })();
+    </script>
+</body>
+</html>
